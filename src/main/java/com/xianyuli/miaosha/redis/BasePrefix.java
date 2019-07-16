@@ -23,7 +23,7 @@ public abstract class BasePrefix implements KeyPrefix {
 
     @Override
     public String getPrefix() {
-        String className = getClass().getSimpleName();
+        String className = getClass().getSimpleName().toUpperCase();
         return className + ":" +prifix+":";
     }
 }

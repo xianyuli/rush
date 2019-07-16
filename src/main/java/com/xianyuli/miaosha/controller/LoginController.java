@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 @Controller
@@ -20,14 +21,14 @@ public class LoginController {
 
 
     @RequestMapping("/tologin")
-    public String toLogin(){
+    public String toLogin() {
         return "login";
     }
 
     @ResponseBody
-    @RequestMapping("dologin")
-    public Result doLogin(@Valid LoginUserVO loginUserVO){
-        return userService.login(loginUserVO);
+    @RequestMapping("/dologin")
+    public Result doLogin(HttpServletResponse response, @Valid LoginUserVO loginUserVO) {
+        return userService.login(response, loginUserVO);
     }
 
 }

@@ -1,5 +1,6 @@
 package com.xianyuli.miaosha.redis.key;
 
+import com.xianyuli.miaosha.commons.UserConst;
 import com.xianyuli.miaosha.redis.BasePrefix;
 
 public class UserKey extends BasePrefix {
@@ -14,5 +15,6 @@ public class UserKey extends BasePrefix {
     }
 
     public static final UserKey GETBYID = new UserKey("ID");
-    public static final UserKey GETBYNAME= new UserKey("NAME");
+    public static final UserKey GETBYNAME = new UserKey("NAME");
+    public static final UserKey USERTOKEN = new UserKey(UserConst.token.COOKIEAGE, "TOKEN");
 }
